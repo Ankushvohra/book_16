@@ -1,0 +1,25 @@
+﻿<div class="alert text-center" role="alert">
+    Product
+</div>
+<div class="border p-2 m-2">
+    <table id="tblData" class="table table-bordered table-striped table-active">
+        <thead>
+            <tr class="bg-primary">
+                <th>Title</th>
+                <th>Description</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<div class="text-center">
+    <a asp-action="Upsert" class="btn btn-outline-primary"><i class="fas fa-plus">&nbsp;Add</i></a>
+</div>
+@section Scripts
+    {
+    <script src="~/js/Product.js"></script>
+}

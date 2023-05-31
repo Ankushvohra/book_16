@@ -1,0 +1,79 @@
+﻿@model book.models.ViewModels.ShoppincartVM
+<form method="post">
+    <br />
+    @if (Model.ListCart.Count() > 0)
+    {
+        
+        <div class="backgroundWhiteBorder">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header bg-dark text-light ml-0 row container">
+                        <div class="col-6">
+                            <i class="fa fa-shopping-cart"></i> &nbsp;
+                            Shopping Cart
+                        </div>
+                    </div>
+                    <div class="card-body" style="background-color: #0b6975">
+                        @foreach (var item in Model.ListCart)
+                        {
+                            var amt = item.Price * item.Count;
+                            <div class="row">
+                                <div class="col-3">
+                                    <a asp-action="remove" asp-route-cartId="@item.Id" class="fas fa-times" style="font-size:30px">
+                                    </a>
+                                    &nbsp;
+                                    &nbsp;
+                                    <img src="@item.Product.Imageurl" class="rounded" width="70%" height="100%" />
+                                </div>
+                                    <div class="col-5">
+                                        <h6><strong>@item.Product.Title</strong></h6>
+                                        <p><small>@item.Product.Discription</small></p>
+                                    </div>
+                                    <div class="offset-1 col-3">
+                                        <div class="">
+                                            <a asp-action="minus" asp-route-cartId="@item.Id" class="btn btn-outline-primary">
+                                                <i class="fas fa-minus"></i>
+                                            </a>
+                                            &nbsp;
+                                             @item.Count
+                                             &nbsp;
+                                            <a asp-action="plus" asp-route-cartId="@item.Id" class="btn btn-outline-primary">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                        }
+                        <hr />
+
+                        <div class="row">
+                            <div class="offset-5 col-6">
+                                <a asp-controller="Home" asp-action="Index" class="btn btn-outline-primary">Add More Items</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer" style="background-color: #0b6975">
+                        <div class="card-footer row" style="background-color: #0b6975">
+                            <div class="offset -4 col-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between" style="color:wheat;">
+                                        <span class="text-light"> Total (USD)</span>
+                                        <strong class="text-light">$ <span id="txtOrderTotal">@Model.OrderHeader.OrderTotal</span></strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="offset-5 col-3">
+                                <a asp-action="Summary" asp-area="Customer" asp-controller="Cart" class="btn btn-outline-primary form-control">Summary</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>No Item Found In The Cart</p>
+    }
+</form>

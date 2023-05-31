@@ -1,0 +1,38 @@
+﻿@model book.models.OrderHeader
+<div class="alert text-center" role="alert">
+    Order Details
+</div>
+<div class="row" style="height:60px;">
+    <div class="col-3">
+            <button class="button-50" onclick="loadPendingOrders()" role="button"> Pending Orders</button>
+    </div>
+    <hr id="one" data-symbol="☂☂☂">
+    <div class="col-3">
+        <button class="button-50" onclick="loadsuccedOrders()" role="button"> Succed Orders</button>
+    </div>
+    <hr id="one" data-symbol="☂☂☂">
+    <div class="col-3">
+        <form asp-area="Admin" asp-controller="OrdersManagement" asp-action="Dateandtime"><button class="button-50" role="button"> Order Between Dates</button></form>
+    </div>
+</div>
+<br/>
+<partial name="BacktoList" />
+<div class="border p-2 m-2">
+    <table id="tblData" class="table table-bordered table-striped table-active">
+        <thead>
+            <tr class="bg-primary">
+                <th>Name</th>
+                <th>Order Date</th>
+                <th>Orderstatus</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section Scripts
+    {
+    <script src="~/js/OrderManage.js"></script>
+}
+
+

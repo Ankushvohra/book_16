@@ -1,0 +1,58 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<div class="offset-4 col-4 text-center" role="alert"><font face="Times New Roman" size="6">Book<font class="text-success">Spend</font></font></div>
+<div class="row">
+    <div class="offset-4 col-4 border shadow" style="background-color:#034851">
+        <section>
+            <form id="account" method="post" class="">
+                <div class="text-center m-1">
+                    @ViewData["Title"] to <font face="Times New Roman" size="4">Book<font class="text-success">Spend</font></font>
+                    <hr/>
+                </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group alert">
+                    <input asp-for="Input.Email" placeholder="Enter Your Email" class="form-control" />
+                    @*<span asp-validation-for="Input.Email" class="text-danger"></span>*@
+                </div>
+                <br/>
+                <div class="form-group alert">
+                    <input asp-for="Input.Password" placeholder="Enter Your Password" class="form-control" />
+
+                    @*<span asp-validation-for="Input.Password" class="text-danger"></span>*@
+                </div>
+                <div class="text-center">
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe">
+                            <input asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <br/>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-outline-primary form-control">Log in</button>
+                </div>
+                <div class="row">
+                <div class="col-6">
+                    <p>
+                        <a id="forgot-password" asp-page="./ForgotPassword">Forgot password</a>
+                    </p>
+                    </div>
+                    <div class="col-6">
+                    <p>
+                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Signup with BooksCart</a>
+                    </p>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

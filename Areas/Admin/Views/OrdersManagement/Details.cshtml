@@ -1,0 +1,51 @@
+﻿@model book.models.OrderHeader
+<form>
+    <div class="alert text-center">
+        Order History
+    </div>
+    <partial name="BacktoList" />
+    <div class="border shadow">
+        <table class="border">
+            <tr class="border">
+                <th class="border col-1">Name</th>
+                <th class="border col-1">@Model.Name</th>
+            </tr>
+            <tr class="border">
+                <td class="border" style="background-color:#1e8183">Phone Number</td>
+                <td class="border">@Model.PhoneNumber</td>
+            </tr>
+            <tr class="border">
+                <td class="border">Postal Code</td>
+                <td class="border" style="background-color:#1e8183">@Model.PostalCode</td>
+            </tr>
+            <tr class="border">
+                <td class="border">State</td>
+                <td class="border">@Model.State</td>
+            </tr>
+            <tr class="border">
+                <td class="border">Street Address</td>
+                <td class="border">@Model.StreetAddress</td>
+            </tr>
+            <tr class="border">
+                <td class="border" style="background-color:#1e8183">Order Date</td>
+                <td class="border">@Model.OderDate</td>
+            </tr>
+            <tr class="border">
+                <td class="border">Order Status</td>
+                <td class="border" style="background-color:#1e8183">@Model.Orderstatus</td>
+            </tr>
+            <tr class="border">
+                <td class="border">Order Total</td>
+                <td class="border">@Model.OrderTotal</td>
+            </tr>
+            <tr class="border">
+                <td class="border">Tracking Number</td>
+                <td class="border">@Model.ApplicationUserId</td>
+            </tr>
+            <tr class="border">
+                <td class="border">Transaction Id</td>
+                <td class="border">@Model.TranSactionId</td>
+            </tr>
+        </table>
+    </div>
+</form>

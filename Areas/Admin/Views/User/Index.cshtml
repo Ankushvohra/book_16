@@ -1,0 +1,26 @@
+﻿<div class="alert text-center" role="alert">
+    User List
+</div>
+<div class="border p-2 m-2">
+    <table id="tblData" class="table table-bordered table-striped table-active">
+        <thead>
+            <tr class="bg-primary">
+                <th>Name</th>
+                <th>Email</th>
+                <th>PhoneNumber</th>
+                <th>Campany</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div class="text-center">
+    <a asp-page="/Account/Register" asp-area="Identity" class="btn btn-outline-primary"><i class="fas fa-plus">&nbsp;Add</i></a>
+</div>
+@section Scripts
+    {
+    <script src="~/js/User.js"></script>
+}
+
+

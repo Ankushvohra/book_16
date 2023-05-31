@@ -1,0 +1,35 @@
+﻿<partial name="BacktoList" />
+<form method="post">
+    <div class="form border-1">
+    <div class="row">
+    <div class="offset-3 col-3">
+        <label for="fromDate">From Date:</label>
+        <input type="date" id="fromDate" name="fromDate" class="form-control" required />
+    </div>
+
+    <div class="col-3">
+        <label for="toDate">To Date:</label>
+        <input type="date" id="toDate" name="toDate" class="form-control" required />
+    </div>
+    </div>
+        <br/>
+        <div class="offset-5"><button class="button-50" onclick="Dateandtime()">Filter</button></div>
+    </div>
+</form>
+<div class="border p-2 m-2">
+    <table id="tblData" class="table table-bordered table-striped table-active">
+        <thead>
+            <tr class="bg-primary">
+                <th>Name</th>
+                <th>Order Date</th>
+                <th>Orderstatus</th>
+                <th>Phone Number</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+@section Scripts
+    {
+    <script src="~/js/OrderManage.js"></script>
+}
